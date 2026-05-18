@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ассортимент | ИП «Славутич»</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f4f7fa; color:#34495e; line-height:1.6; }
+        header { background:linear-gradient(to right, #5dade2, #85c1e9); color:white; padding:40px 20px; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.05); }
+        nav { background:#3498db; padding:15px; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.05); }
+        nav a { color:white; margin:0 25px; text-decoration:none; font-weight:700; transition:color 0.3s; }
+        nav a:hover { color:#f1c40f; }
+        .container { max-width:1300px; margin:40px auto; padding:30px; background:white; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.03); }
+        .section { margin-bottom:60px; }
+        .section h3 { color:#5dade2; border-bottom:3px solid #a9cce3; padding-bottom:15px; font-size:2em; }
+        .gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:25px; }
+        .item { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:20px; text-align:center; transition:transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+        .item:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(93,173,226,0.15); }
+        .item img { max-width:100%; height:auto; border-radius:8px; margin-bottom:15px; object-fit:cover; transition:transform 0.3s ease-in-out; }
+        .item:hover img { transform:scale(1.05); }
+        .item p { margin:10px 0; font-size:1.1em; color:#606f7b; }
+        footer { background:linear-gradient(to right, #5dade2, #85c1e9); color:white; text-align:center; padding:20px; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        .modal-content { max-width: 90%; max-height: 90%; }
+        .close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; }
+        .close:hover { color: #bbb; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ИП Магазин «Славутич»</h1>
+    <p>Ассортимент товаров</p>
+</header>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="assortment.html">Ассортимент</a>
+    <a href="about.html">О нас</a>
+    <a href="contact.html">Контакты</a>
+</nav>
+
+<div class="container">
+    <h2>Наш полный ассортимент (реальные фото из магазина)</h2>
+    
+    <div class="section">
+        <h3>Мясные изделия и колбасы</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/meat1.jpg')"><img src="images/meat1.jpg" alt="Колбасы"><p>Разнообразные колбасы и сосиски</p></div>
+            <div class="item" onclick="openModal('images/meat2.jpg')"><img src="images/meat2.jpg" alt="Сосиски"><p>Молочные сосиски и ветчина</p></div>
+            <div class="item" onclick="openModal('images/meat3.jpg')"><img src="images/meat3.jpg" alt="Копчёности"><p>Копченые изделия и рулеты</p></div>
+            <div class="item" onclick="openModal('images/meat4.jpg')"><img src="images/meat4.jpg" alt="Ассорти"><p>Большой выбор колбасных изделий</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Молочные продукты</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/milk1.jpg')"><img src="images/milk1.jpg" alt="Молоко"><p>Молоко, кефир, ряженка</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Овощи и фрукты</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/fruits1.jpg')"><img src="images/fruits1.jpg" alt="Бананы"><p>Свежие бананы</p></div>
+            <div class="item" onclick="openModal('images/fruits2.jpg')"><img src="images/fruits2.jpg" alt="Ананасы"><p>Ананасы и экзотические фрукты</p></div>
+            <div class="item" onclick="openModal('images/fruits3.jpg')"><img src="images/fruits3.jpg" alt="Яблоки"><p>Яблоки, апельсины, киви</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Бакалея</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/grocery1.jpg')"><img src="images/grocery1.jpg" alt="Макароны"><p>Макароны разных видов</p></div>
+            <div class="item" onclick="openModal('images/grocery2.jpg')"><img src="images/grocery2.jpg" alt="Крупы"><p>Крупы и консервы</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Напитки</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/drinks1.jpg')"><img src="images/drinks1.jpg" alt="Пиво"><p>Пиво разных сортов</p></div>
+            <div class="item" onclick="openModal('images/drinks2.jpg')"><img src="images/drinks2.jpg" alt="Соки"><p>Соки, вода, энергетик</p></div>
+        </div>
+    </div>
+    
+    <!-- Новые категории -->
+    <div class="section">
+        <h3>Сладости и шоколад</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/sweets1.jpg')"><img src="images/sweets1.jpg" alt="Шоколад"><p>Milka, Alpen Gold, Oreo</p></div>
+            <div class="item" onclick="openModal('images/sweets2.jpg')"><img src="images/sweets2.jpg" alt="Жвачки"><p>Жвачки Mentos, Orbit</p></div>
+            <div class="item" onclick="openModal('images/sweets3.jpg')"><img src="images/sweets3.jpg" alt="Конфеты"><p>Конфеты и батончики</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Бытовая химия и косметика</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/chem1.jpg')"><img src="images/chem1.jpg" alt="Шампуни"><p>Шампуни и гели для душа</p></div>
+            <div class="item" onclick="openModal('images/chem2.jpg')"><img src="images/chem2.jpg" alt="Средства для уборки"><p>Средства для уборки и стирки</p></div>
+            <div class="item" onclick="openModal('images/chem3.jpg')"><img src="images/chem3.jpg" alt="Косметика"><p>Краски для волос и уход</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Замороженные продукты</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/frozen1.jpg')"><img src="images/frozen1.jpg" alt="Пицца"><p>Пицца и тесто</p></div>
+            <div class="item" onclick="openModal('images/frozen2.jpg')"><img src="images/frozen2.jpg" alt="Пельмени"><p>Пельмени и полуфабрикаты</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Хлебобулочные изделия</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/bakery1.jpg')"><img src="images/bakery1.jpg" alt="Торты"><p>Торты и пирожные</p></div>
+            <div class="item" onclick="openModal('images/bakery2.jpg')"><img src="images/bakery2.jpg" alt="Печенье"><p>Печенье и выпечка</p></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Сигареты и табак</h3>
+        <div class="gallery">
+            <div class="item" onclick="openModal('images/tobacco1.jpg')"><img src="images/tobacco1.jpg" alt="Сигареты"><p>Разные марки сигарет</p></div>
+        </div>
+    </div>
+    
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<footer>
+    <p>&copy; 2026 ИП Магазин «Славутич»</p>
+</footer>
+
+<script>
+    function openModal(src) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        modal.style.display = "flex";
+        modalImg.src = src;
+    }
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) closeModal();
+    }
+</script>
+
+</body>
+</html>
